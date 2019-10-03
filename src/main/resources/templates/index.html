@@ -37,16 +37,24 @@
             font-size:15px;
             line-height:1.5em;
             height: 3em;
-
+            text-align: center;
             overflow:hidden;
         }
+        .card-body-mid{
+            display: table-cell;
+            line-height:1.5em;
+            height: 9em;
+            vertical-align: middle;
+            overflow:hidden;
 
+        }
         img{
-            display: block;
+
             border: 1px solid #ddd;
             border-radius: 4px;
             padding: 5px;
-            width:200px;
+
+            height: 100%;
         }
 
 
@@ -55,10 +63,6 @@
 <body class="masthead">
 <div th:insert="base::navbar"></div>
 
-<form th:action="@{/processsearch}" method="post">
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit">Search</button>
-</form>
 <div class="card-columns">
     <div th:each="job:${jobs}">
         <div class="card">
@@ -66,7 +70,9 @@
                 <p class="card-text"><span th:text="${job.title}"></span></p>
 
             </div>
-            <img  th:src="${job.pic}" alt="job image">
+            <div class="card-body-mid">
+            <img th:src="${job.pic}" alt="job image">
+            </div>
             <div class="card-body">
                 <p class="card-text"><span th:text="${job.content}"></span></p>
             </div>

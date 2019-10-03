@@ -42,14 +42,14 @@ public class Job {
         this.setDefaultPic();
 
     }
-    public Job(String title, String content,String author,String phone,boolean check){
+    public Job(String title, String content,String author,String phone,String pic){
         this();
         this.title=title;
         this.content=content;
         this.id=getId();
         this.author=author;
         this.phone=phone;
-        this.setDefaultPic();
+        this.pic=pic;
 
     }
 

@@ -6,6 +6,6 @@ import java.util.ArrayList;
 
 public interface JobRepository extends CrudRepository<Job, Long>
 {
-        ArrayList<Job> findByContentContainingOrTitleContainingOrAuthorContainingIgnoreCase(String s1, String s2,String s3);
+        ArrayList<Job> findByContentContainingIgnoreCaseOrTitleContainingIgnoreCaseOrAuthorContainingIgnoreCase(String s1, String s2, String s3);
 
 }

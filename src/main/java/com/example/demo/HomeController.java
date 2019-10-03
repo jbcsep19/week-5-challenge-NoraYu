@@ -79,7 +79,7 @@ public class HomeController {
     }
     @PostMapping("/processsearch")
     public String searchResult(Model model,@RequestParam(name="search") String search) {
-        model.addAttribute("jobs", jobRepository.findByContentContainingOrTitleContainingOrAuthorContainingIgnoreCase(search,search,search));
+        model.addAttribute("jobs", jobRepository.findByContentContainingIgnoreCaseOrTitleContainingIgnoreCaseOrAuthorContainingIgnoreCase(search,search,search));
         return "index";
     }
 
